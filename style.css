@@ -1,54 +1,864 @@
+
+/* ===========================
+   RESET
+=========================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#090909;
-    color:white;
+
+    background:#050505;
+
+    color:#ffffff;
+
+    overflow-x:hidden;
+
+    font-family:'Inter',sans-serif;
+
+}
+
+/* ===========================
+   LOADING
+=========================== */
+
+#loading-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#000;
+
     display:flex;
+
+    flex-direction:column;
+
     justify-content:center;
+
     align-items:center;
+
+    z-index:9999;
+
+}
+
+.loader{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    border:3px solid rgba(255,255,255,.15);
+
+    border-top:3px solid white;
+
+    animation:spin 1.2s linear infinite;
+
+}
+
+#loading-screen h2{
+
+    margin-top:20px;
+
+    font-weight:300;
+
+    letter-spacing:6px;
+
+    color:white;
+
+}
+
+@keyframes spin{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* ===========================
+PASSWORD
+=========================== */
+
+#password-page{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#040404;
+
+    z-index:9000;
+
+}
+
+.glass{
+
+    width:360px;
+
+    max-width:92%;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:25px;
+
+    padding:45px 30px;
+
+    text-align:center;
+
+}
+
+.glass h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:50px;
+
+    margin-bottom:15px;
+
+}
+
+.glass p{
+
+    color:#cfcfcf;
+
+    line-height:1.8;
+
+}
+
+#password{
+
+    width:100%;
+
+    margin-top:30px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#111;
+
+    color:white;
+
+    text-align:center;
+
+    font-size:18px;
+
+    outline:none;
+
+}
+
+.glass button{
+
+    margin-top:20px;
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:white;
+
+    color:black;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    font-weight:bold;
+
+}
+
+.glass button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+#error{
+
+    margin-top:15px;
+
+    color:#ff8b8b;
+
+}
+/* ===========================
+WEBSITE
+=========================== */
+
+#website{
+    display:none;
+}
+
+/* ===========================
+HERO
+=========================== */
+
+.hero{
+
+    position:relative;
+
     min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at top,#202020 0%,#090909 45%,#000 100%);
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,.15),
+    rgba(0,0,0,.65));
+
+}
+
+.stars{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+    radial-gradient(2px 2px at 15% 20%,white,transparent),
+    radial-gradient(2px 2px at 30% 70%,white,transparent),
+    radial-gradient(1.5px 1.5px at 60% 30%,white,transparent),
+    radial-gradient(2px 2px at 75% 10%,white,transparent),
+    radial-gradient(2px 2px at 85% 65%,white,transparent),
+    radial-gradient(2px 2px at 45% 85%,white,transparent);
+
+    opacity:.6;
+
+    animation:starsMove 14s linear infinite;
+
+}
+
+@keyframes starsMove{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-80px);
+
+    }
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    width:90%;
+
+    max-width:700px;
+
+}
+
+.hero-content h3{
+
+    font-size:20px;
+
+    letter-spacing:8px;
+
+    color:#d0d0d0;
+
+    font-weight:300;
+
+    margin-bottom:20px;
+
+}
+
+.hero-content h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:90px;
+
+    font-weight:500;
+
+    margin-bottom:30px;
+
+}
+
+.hero-content p{
+
+    color:#d7d7d7;
+
+    line-height:2;
+
+    font-size:18px;
+
+}
+
+#startStory{
+
+    margin-top:45px;
+
+    padding:15px 40px;
+
+    border:1px solid white;
+
+    background:transparent;
+
+    color:white;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    font-size:16px;
+
+}
+
+#startStory:hover{
+
+    background:white;
+
+    color:black;
+
+}
+
+/* ===========================
+INTRO
+=========================== */
+
+#intro{
+
+    padding:140px 25px;
+
+    background:#050505;
+
 }
 
 .container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.container h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:56px;
+
+    margin-bottom:45px;
+
+}
+
+.introText{
+
+    max-width:650px;
+
+    margin:auto;
+
+    color:#cfcfcf;
+
+    line-height:2.2;
+
+    font-size:18px;
+
+}
+/* ===========================
+MEMORY SECTIONS
+=========================== */
+
+#memory-one,
+#memory-two{
+
+    padding:120px 25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:50px;
+
+    background:#080808;
+
+}
+
+.photo-card{
+
     width:90%;
+
     max-width:420px;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.45);
+
+}
+
+.photo-card img{
+
+    width:100%;
+
+    display:block;
+
+    transition:.8s;
+
+}
+
+.photo-card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.memory-text,
+.quote{
+
+    max-width:700px;
+
+    text-align:center;
+
+}
+
+.memory-text h2,
+.quote h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:48px;
+
+    margin-bottom:25px;
+
+}
+
+.memory-text p,
+.quote p{
+
+    color:#cfcfcf;
+
+    line-height:2;
+
+    font-size:18px;
+
+}
+
+/* ===========================
+MUSIC
+=========================== */
+
+#music-section{
+
+    padding:120px 25px;
+
+    background:#050505;
+
+}
+
+.music-card{
+
+    max-width:600px;
+
+    margin:auto;
+
+    text-align:center;
+
+    padding:45px;
+
+    border-radius:22px;
+
+    background:#111;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.music-card h3{
+
+    letter-spacing:6px;
+
+    color:#a9a9a9;
+
+    margin-bottom:18px;
+
+    font-weight:300;
+
+}
+
+.music-card h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:58px;
+
+    margin-bottom:10px;
+
+}
+
+.music-card p{
+
+    color:#d5d5d5;
+
+    margin-bottom:35px;
+
+}
+
+.music-card button{
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:35px;
+
+    cursor:pointer;
+
+    background:white;
+
+    color:black;
+
+    transition:.35s;
+
+    font-weight:bold;
+
+}
+
+.music-card button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.music-card small{
+
+    display:block;
+
+    margin-top:20px;
+
+    color:#888;
+
+}
+
+/* ===========================
+LETTER
+=========================== */
+
+#letter{
+
+    padding:130px 25px;
+
+    background:#070707;
+
+}
+
+.letter-container{
+
+    max-width:850px;
+
+    margin:auto;
+
+    padding:55px;
+
+    border-radius:25px;
+
+    background:#101010;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.letter-container h2{
+
+    text-align:center;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:60px;
+
+    margin-bottom:45px;
+
+}
+
+#letterText p{
+
+    color:#d8d8d8;
+
+    line-height:2.25;
+
+    font-size:18px;
+
+    margin-bottom:28px;
+
+}
+/* ===========================
+BIRTHDAY
+=========================== */
+
+#birthday{
+    padding:120px 25px;
+    background:#050505;
     text-align:center;
 }
 
-.card{
-    background:#111;
-    border:1px solid #333;
-    border-radius:20px;
-    padding:25px;
-    box-shadow:0 0 30px rgba(255,255,255,.05);
+.birthday-content h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:60px;
+    margin-bottom:25px;
 }
 
-h1{
-    font-size:34px;
-    margin-bottom:15px;
+.birthday-content p{
+    color:#cfcfcf;
+    margin-bottom:45px;
+    line-height:2;
 }
 
-p{
-    color:#bbb;
-    margin-bottom:20px;
+.cake{
+    margin:50px auto;
+    width:180px;
+    position:relative;
 }
 
-button{
-    padding:12px 30px;
+.cake-body{
+    width:180px;
+    height:110px;
+    background:#ffffff;
+    border-radius:15px;
+    position:relative;
+}
+
+.candle{
+    width:12px;
+    height:55px;
+    background:#d9d9d9;
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    top:-50px;
+    border-radius:10px;
+}
+
+.flame{
+    width:18px;
+    height:26px;
+    background:#ffd166;
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    top:-72px;
+    border-radius:50%;
+    animation:flicker .8s infinite alternate;
+}
+
+@keyframes flicker{
+
+from{
+transform:translateX(-50%) scale(1);
+opacity:1;
+}
+
+to{
+transform:translateX(-50%) scale(.85);
+opacity:.7;
+}
+
+}
+
+#wishButton{
+    margin-top:35px;
+    padding:15px 35px;
     border:none;
-    border-radius:12px;
+    border-radius:35px;
     background:white;
     color:black;
     cursor:pointer;
-    font-size:16px;
-    transition:.3s;
+    transition:.35s;
+    font-weight:bold;
 }
 
-button:hover{
-    transform:scale(1.05);
+#wishButton:hover{
+    transform:translateY(-4px);
+}
+
+/* ===========================
+ENDING
+=========================== */
+
+#ending{
+    padding:150px 25px;
+    text-align:center;
+    background:#000;
+}
+
+.ending-content{
+    max-width:750px;
+    margin:auto;
+}
+
+.ending-content h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:58px;
+    margin-bottom:35px;
+}
+
+.ending-content p{
+    color:#cfcfcf;
+    line-height:2.2;
+    font-size:18px;
+}
+
+.ending-content h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:72px;
+    margin-top:60px;
+}
+
+.signature{
+    margin-top:45px;
+    font-size:22px;
+    letter-spacing:2px;
+    color:#ffffff;
+}
+
+/* ===========================
+FOOTER
+=========================== */
+
+footer{
+    padding:35px;
+    text-align:center;
+    background:#000;
+}
+
+footer p{
+    color:#666;
+    line-height:1.8;
+    font-size:14px;
+}
+
+/* ===========================
+SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#050505;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#666;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#999;
+}
+
+/* ===========================
+RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+.hero-content h1{
+    font-size:60px;
+}
+
+.container h2,
+.memory-text h2,
+.quote h2,
+.letter-container h2,
+.birthday-content h2,
+.ending-content h2{
+    font-size:42px;
+}
+
+.ending-content h1{
+    font-size:52px;
+}
+
+.music-card h1{
+    font-size:46px;
+}
+
+.letter-container{
+    padding:30px;
+}
+
+.photo-card{
+    max-width:95%;
+}
+
+.memory-text p,
+.quote p,
+#letterText p,
+.container p{
+    font-size:16px;
+}
+
 }
