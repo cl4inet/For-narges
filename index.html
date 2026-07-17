@@ -1,1 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
 
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#000;
+color:white;
+font-family:Arial,sans-serif;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+}
+
+.container{
+text-align:center;
+animation:fade 2s;
+padding:20px;
+}
+
+h1{
+font-size:45px;
+margin-bottom:20px;
+}
+
+h2{
+font-size:22px;
+font-weight:300;
+color:#d6d6d6;
+}
+
+button{
+margin-top:40px;
+padding:15px 40px;
+background:white;
+border:none;
+border-radius:40px;
+font-size:18px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Happy Birthday</h1>
+
+<h2>My Love ❤️</h2>
+
+<button onclick="start()">
+Tap To Begin
+</button>
+
+</div>
+
+<script>
+
+function start(){
+
+document.body.innerHTML=`
+
+<div style="display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:black;
+color:white;
+font-size:30px;
+text-align:center;
+padding:30px;
+animation:fade 2s;">
+
+Some stories<br><br>
+
+are not meant<br><br>
+
+to be read...<br><br>
+
+They are meant<br><br>
+
+to be lived.
+
+</div>
+
+`;
+
+}
+
+</script>
+
+</body>
+</html>
