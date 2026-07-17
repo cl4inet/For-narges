@@ -1,59 +1,396 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Narges </title>
+
+    <title>For Narges</title>
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
-<div id="loading">
+<div id="loading-screen">
 
-    <div class="loader-circle"></div>
+    <div class="loader"></div>
 
-    <p class="loading-text">
-        Loading...
-    </p>
+    <h2>Loading...</h2>
 
 </div>
 
-<section id="hero">
+<div id="password-page">
 
-    <div id="stars"></div>
+    <div class="glass">
 
-    <div class="overlay"></div>
+        <h1>For Narges</h1>
 
-    <div class="hero-content">
-
-        <p class="small">
-            A place where time stands still...
+        <p>
+            Some gifts are opened...
+            <br>
+            Others are experienced.
         </p>
 
-        <h1>
-            FOR NARGES
-        </h1>
+        <input
+            id="password"
+            type="password"
+            maxlength="4"
+            placeholder="Password">
+
+        <button onclick="checkPassword()">
+
+            Enter
+
+        </button>
+
+        <p id="error"></p>
+
+    </div>
+
+</div>
+
+<div id="website">
+
+<section class="hero">
+
+<div class="stars"></div>
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h3>
+
+Happy Birthday
+
+</h3>
+
+<h1>
+
+Narges
+
+</h1>
+
+<p>
+
+There are people we meet...
+
+<br><br>
+
+and there are people
+
+who quietly become home.
+
+</p>
+
+<button id="startStory">
+
+Enter Our Story
+
+</button>
+
+</div>
+
+</section>
+
+<section id="intro">
+
+<div class="container">
+
+<h2>
+
+A Letter Written
+With Love
+
+</h2>
+
+<p class="introText">
+
+Before you continue...
+
+I just want you to know
+
+that every single page of this little website
+
+was made for one person only.
+
+You.
+
+</p>
+
+</div>
+
+</section>
+<section id="memory-one">
+
+    <div class="photo-card">
+
+        <img src="assets/images/photo1.jpg" alt="Us">
+
+    </div>
+
+    <div class="memory-text">
 
         <h2>
-            from Parla
+            Every story has a beginning.
         </h2>
 
-        <button id="begin">
-            Enter Our Story
+        <p>
+
+            Ours wasn't written in a book.
+
+            It wasn't planned.
+
+            It simply happened...
+
+            and somehow,
+
+            my world slowly started revolving around you.
+
+        </p>
+
+    </div>
+
+</section>
+
+<section id="music-section">
+
+    <div class="music-card">
+
+        <h3>
+
+            Tonight's Soundtrack
+
+        </h3>
+
+        <h1>
+
+            Angel
+
+        </h1>
+
+        <p>
+
+            Massive Attack
+
+        </p>
+
+        <button id="playMusic">
+
+            Play Music
+
+        </button>
+
+        <small>
+
+            Put your headphones on.
+
+        </small>
+
+    </div>
+
+</section>
+
+<section id="letter">
+
+<div class="letter-container">
+
+<h2>
+
+To My Narges
+
+</h2>
+
+<div id="letterText">
+
+<p>
+
+If there is one thing I know for certain,
+
+it's that loving you quietly changed every part of me.
+
+</p>
+
+<p>
+
+You became my safest place.
+
+The first person I want to tell everything.
+
+The last thought before I sleep.
+
+</p>
+
+<p>
+
+I never knew another human being
+
+could feel so much like home.
+
+Until you.
+
+</p>
+
+<p>
+
+Every day,
+
+I find another reason
+
+to fall in love with you again.
+
+</p>
+
+<p>
+
+Not because you're perfect...
+
+But because you're you.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="memory-two">
+
+<div class="photo-card">
+
+<img src="assets/images/photo2.jpg" alt="Us">
+
+</div>
+
+<div class="quote">
+
+<h2>
+
+If I had one more lifetime...
+
+</h2>
+
+<p>
+
+I'd still search every universe
+
+until I found you again.
+
+</p>
+
+</div>
+
+</section>
+<section id="birthday">
+
+    <div class="birthday-content">
+
+        <h2>
+
+            Happy Birthday,
+            My Love.
+
+        </h2>
+
+        <p>
+
+            Before you make a wish...
+
+            remember this.
+
+        </p>
+
+        <div class="cake">
+
+            <div class="candle"></div>
+
+            <div class="flame"></div>
+
+            <div class="cake-body"></div>
+
+        </div>
+
+        <button id="wishButton">
+
+            Make A Wish ✨
+
         </button>
 
     </div>
 
 </section>
 
+<section id="ending">
+
+    <div class="ending-content">
+
+        <h2>
+
+            Thank You
+
+        </h2>
+
+        <p>
+
+            Thank you for existing.
+
+            <br><br>
+
+            Thank you for loving me.
+
+            <br><br>
+
+            Thank you for becoming
+
+            the most beautiful part
+
+            of my life.
+
+        </p>
+
+        <h1>
+
+            I Love You.
+
+        </h1>
+
+        <div class="signature">
+
+            — Parla ❤️
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>
+
+        Made with every heartbeat.
+
+        <br>
+
+        Exclusively for Narges.
+
+    </p>
+
+</footer>
+
+</div>
+
 <script src="script.js"></script>
 
 </body>
+
 </html>
